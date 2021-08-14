@@ -5,11 +5,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class SelectClassTest {
@@ -38,16 +41,33 @@ public class SelectClassTest {
                 .getAttribute("value");
         Assert.assertEquals("audi", actualCar);
     }
+
     @Test
     public void selectOneTest(){
-        Select selectOne = new Select(driver.findElement(By.id("selectOne")));
-        System.out.println(selectOne.getOptions());
+        WebElement firstSelect = driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]"));
+        firstSelect.click();
+        Actions makeFirstAction = new Actions(driver);
+        makeFirstAction
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .sendKeys(Keys.ARROW_DOWN)
+                .build()
+                .perform();
+        System.out.println(firstSelect.getText());
+        Assert.assertEquals("Group 2, option 2", firstSelect.getText());
     }
 
-
+    @Test
+    public void selectSecondTest(){
+        WebElement secondSelect = driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]"));
+        secondSelect.click();
+        System.out.println(secondSelect.getText());
+        Assert.assertEquals("Group 2, option 2", secondSelect.getText());
+    }
 
     @After
     public void makePostconditions(){
-
+        driver.close();
+        driver.quit();
     }
 }
