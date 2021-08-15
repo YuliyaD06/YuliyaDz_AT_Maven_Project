@@ -1,5 +1,6 @@
 package webdriver;
 
+import io.cucumber.datatable.dependency.com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -44,25 +45,25 @@ public class SelectClassTest {
 
     @Test
     public void selectOneTest(){
-        WebElement firstSelect = driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]"));
-        firstSelect.click();
-        Actions makeFirstAction = new Actions(driver);
-        makeFirstAction
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .sendKeys(Keys.ARROW_DOWN)
-                .build()
-                .perform();
-        System.out.println(firstSelect.getText());
-        Assert.assertEquals("Group 2, option 2", firstSelect.getText());
+        driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]")).click();
+        driver.findElement(By.xpath("//div[text()='Group 1, option 1']")).click();
+        WebElement firstSelect = driver.findElement(By.xpath("//div[text()='Group 1, option 1']"));
+        Assert.assertEquals("Group 1, option 1", firstSelect.getText());
     }
 
     @Test
     public void selectSecondTest(){
-        WebElement secondSelect = driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]"));
-        secondSelect.click();
-        System.out.println(secondSelect.getText());
-        Assert.assertEquals("Group 2, option 2", secondSelect.getText());
+        driver.findElement(By.xpath("//div[@class=' css-1hwfws3']/div[contains(.,'Select Option')]")).click();
+        driver.findElement(By.xpath("//div[text()='Mr.']")).click();
+        WebElement secondSelect = driver.findElement(By.xpath("//div[text()='Mr.']"));
+        Assert.assertEquals("Mr.", secondSelect.getText());
+    }
+
+    @Test
+    public void selectThirdTest(){
+        driver.findElement(By.xpath("//div[text()='Select...']")).click();
+        driver.findElement(By.xpath("//div[text()='Blue']")).click();
+        Assert.assertEquals("Blue", driver.findElement(By.xpath("//div[@class='css-12jo7m5']")).getText());
     }
 
     @After
