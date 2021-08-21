@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-15T10:32:19Z" name="YAML Test suite" finished-at="2021-08-15T10:32:28Z" duration-ms="9190">
+    <groups>
+    </groups>
+    <test started-at="2021-08-15T10:32:19Z" name="Suite with YAML" finished-at="2021-08-15T10:32:28Z" duration-ms="9190">
+      <class name="classWork.taf.TestClassNg">
+        <test-method is-config="true" signature="makePrecondition()[pri:0, instance:classWork.taf.TestClassNg@5a709816]" started-at="2021-08-15T13:32:19Z" name="makePrecondition" finished-at="2021-08-15T13:32:19Z" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makePrecondition -->
+        <test-method is-config="true" signature="makePrecondition()[pri:0, instance:classWork.taf.TestClassTwoNg@78383390]" started-at="2021-08-15T13:32:19Z" name="makePrecondition" finished-at="2021-08-15T13:32:19Z" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- makePrecondition -->
+        <test-method signature="getBookTitleTest()[pri:0, instance:classWork.taf.TestClassNg@5a709816]" started-at="2021-08-15T13:32:19Z" name="getBookTitleTest" finished-at="2021-08-15T13:32:25Z" duration-ms="5792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookTitleTest -->
+        <test-method signature="getDemoTitleTest()[pri:0, instance:classWork.taf.TestClassNg@5a709816]" started-at="2021-08-15T13:32:25Z" name="getDemoTitleTest" finished-at="2021-08-15T13:32:28Z" duration-ms="3122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDemoTitleTest -->
+      </class> <!-- classWork.taf.TestClassNg -->
+      <class name="classWork.taf.TestClassTwoNg">
+        <test-method signature="getBookTitleTest()[pri:0, instance:classWork.taf.TestClassTwoNg@78383390]" started-at="2021-08-15T13:32:19Z" name="getBookTitleTest" finished-at="2021-08-15T13:32:25Z" duration-ms="5795" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookTitleTest -->
+        <test-method signature="getDemoTitleTest()[pri:0, instance:classWork.taf.TestClassTwoNg@78383390]" started-at="2021-08-15T13:32:25Z" name="getDemoTitleTest" finished-at="2021-08-15T13:32:28Z" duration-ms="3123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getDemoTitleTest -->
+      </class> <!-- classWork.taf.TestClassTwoNg -->
+    </test> <!-- Suite with YAML -->
+  </suite> <!-- YAML Test suite -->
+</testng-results>

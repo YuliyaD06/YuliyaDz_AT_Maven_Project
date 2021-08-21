@@ -1,0 +1,14 @@
+body {
+    align-items: center;
+}
+.form_input {
+                align: center;
+                background-position: center;
+                width: 400px;
+                height: 110px;
+                font-size: 200%;
+                font-weight: bold;
+                padding:10px;
+                box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+                border-radius:10px;
+}
