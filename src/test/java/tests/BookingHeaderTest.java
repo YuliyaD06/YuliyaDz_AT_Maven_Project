@@ -2,18 +2,21 @@ package tests;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import pages.BookingPage;
+import pages.CommonBookingPage;
+import pages.LoginPage;
+import pages.NavigationBarView;
 import steps.BookingSteps;
 
 public class BookingHeaderTest {
 
-    BookingSteps step = new BookingSteps();
-    BookingPage page = new BookingPage();
+    NavigationBarView navigationBar = new NavigationBarView();
+    CommonBookingPage page = new CommonBookingPage();
+    LoginPage loginPage = new LoginPage();
 
     @Test
-    public void checkHeadersTest(){
-        step.loginAsRegistered("yuliyatest66@gmail.com", "123654ghjJ");
-        Assert.assertTrue(page.allHeadersPresented());
+    public void checkHeadersTest() {
+        page.openBookingPage();
+        loginPage.loginWithEmail("yuliyatest66@gmail.com", "123654ghjJ");
+        Assert.assertTrue(navigationBar.allHeadersPresent());
     }
 }
