@@ -1,5 +1,6 @@
 package pages;
 
+import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class NavigationBarView {
 
-    WebDriver driver;
+    WebDriver driver = Driver.getWebDriver();
 
     private static final String BOOKING_LOGO = "//div[@class='bui-header__logo']";
     private static final String CURRENCY = "//div/button[@data-modal-aria-label='Select your currency']";

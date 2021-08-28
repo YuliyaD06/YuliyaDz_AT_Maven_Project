@@ -3,15 +3,19 @@ package utils;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class FindDate {
-    public String addMonth(int month){
-        LocalDate today = LocalDate.now();
-        System.out.println(today);
-        today = today.plusMonths(month);
-        System.out.println(today);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        String addedMonth = formatter.format(today);
-        System.out.println(addedMonth);
-        return addedMonth;
+public class ActionsWithCurrentDate {
+
+    LocalDate today = LocalDate.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    public String currentDate(){
+        String currentDate = formatter.format(today);
+        return currentDate;
     }
+    public String addMonthToCurrentDate(int month){
+        today = today.plusMonths(month);
+        String newIncreasedMonth = formatter.format(today);
+        return newIncreasedMonth;
+    }
+
 }
