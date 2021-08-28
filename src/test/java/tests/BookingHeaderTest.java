@@ -9,13 +9,13 @@ import steps.BookingSteps;
 
 public class BookingHeaderTest extends Preconditions {
 
-    NavigationBarView navigationBar = new NavigationBarView();
-    CommonBookingPage page = new CommonBookingPage();
-    LoginPage loginPage = new LoginPage();
+    private NavigationBarView navigationBar = new NavigationBarView();
+    private CommonBookingPage commonBookingPagepage = new CommonBookingPage();
+    private LoginPage loginPage = new LoginPage();
 
     @Test
     public void checkHeadersTest() {
-        page.openBookingPage();
+        commonBookingPagepage.openBookingPage();
         loginPage.loginWithEmail("yuliyatest66@gmail.com", "123654ghjJ");
         Assert.assertTrue(navigationBar.allHeadersPresent());
     }
