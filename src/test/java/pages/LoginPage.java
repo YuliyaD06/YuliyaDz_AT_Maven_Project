@@ -1,5 +1,6 @@
 package pages;
 
+import driver.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
 
-    WebDriver driver;
+    WebDriver driver = Driver.getWebDriver();
 
     private static final String HEADER_SIGN_IN_BUTTON = "//a[@class='bui-button bui-button--secondary js-header-login-link']/span[contains(.,'Sign in')]";
     private static final String ENTER_MAIL_FIELD = "//div[@class='bui-input-text__field']/input";

@@ -7,7 +7,7 @@ import pages.LoginPage;
 import pages.NavigationBarView;
 import steps.BookingSteps;
 
-public class BookingHeaderTest {
+public class BookingHeaderTest extends Preconditions {
 
     NavigationBarView navigationBar = new NavigationBarView();
     CommonBookingPage page = new CommonBookingPage();
