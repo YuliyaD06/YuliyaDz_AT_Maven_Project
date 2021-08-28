@@ -15,10 +15,10 @@ public class DriverManager {
     public static WebDriver getDriver(Config config) {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        //+++ clean session, cookies for Chrome
+
         return switch (config) {
-            case CHROME -> new ChromeDriver(capabilities);
+            case CHROME -> new ChromeDriver(options);
             case FIREFOX, EDGE, SAFARI -> null;
             case REMOTE -> getRemoteDriver();
         };

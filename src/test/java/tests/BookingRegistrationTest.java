@@ -8,19 +8,19 @@ import steps.BookingSteps;
 
 public class BookingRegistrationTest extends Preconditions {
 
-    BookingSteps step = new BookingSteps();
-    CommonBookingPage mainPage = new CommonBookingPage();
-    RegistrationPage registrationPage = new RegistrationPage();
-    GmailPage gmailPage = new GmailPage();
+    private BookingSteps step = new BookingSteps();
+    private CommonBookingPage commonBookingPage = new CommonBookingPage();
+    private RegistrationPage registrationPage = new RegistrationPage();
+    private GmailPage gmailPage = new GmailPage();
 
     @Test
     public void registrationTest(){
-        mainPage.openBookingPage();
+        commonBookingPage.openBookingPage();
         registrationPage.openRegistrationForm();
         registrationPage.enterMailDuringRegistration("brakus.amber@trashmail.fr");
         registrationPage.enterPasswordDuringRegistration("SBb6tPijl7");
         //step.passCaptcha();
-        mainPage.closeWelcomeCard();
+        commonBookingPage.closeWelcomeCard();
         gmailPage.confirmRegistration("SBb6tPijl7", "yuliyatest66@gmail.com");
     }
 

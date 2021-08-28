@@ -9,19 +9,17 @@ import test.v6.C;
 
 public class BookingFavoritesTest extends Preconditions {
 
-    CommonBookingPage bookingPage = new CommonBookingPage();
-    LoginPage loginPage = new LoginPage();
-    CalendarView calendar = new CalendarView();
-    DestinationView destination = new DestinationView();
+    private CommonBookingPage commonBookingPage = new CommonBookingPage();
+    private LoginPage loginPage = new LoginPage();
+    private CalendarView calendar = new CalendarView();
+    private DestinationView destination = new DestinationView();
 
     @Test
     public void checkFavoritesHotelsTest(){
-        bookingPage.openBookingPage();
+        commonBookingPage.openBookingPage();
         loginPage.loginWithEmail("yuliyatest66@gmail.com", "123654ghjJ");
-        ////<<<<To ASK>>>>////
-        //bookingPage.closeWelcomeCard();
         calendar.choosePeriodOfTrip(1);
         destination.chooseDestination("Madrid");
-        bookingPage.searchHotels();
+        commonBookingPage.searchHotels();
     }
 }
